@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _HEADERS_H_
+#define _HEADERS_H_
+
 // c++ stl libraries
 #include <iostream>
 #include <string>
@@ -10,15 +12,22 @@
 #include <unordered_map>
 #include <stack>
 #include <queue>
+#include <numeric>
+
 // c libraries
 #include <cctype>
 #include <climits>
 #include <cmath>
 #include <cstring>
 
-#include"listnode.h"
-#include"btree.h"
-
+// gtest
 #include <gtest/gtest.h>
 
+// listnode
+#include "listnode.h"
+#include "btree.h"
+
 using namespace std;
+using namespace LeetCode;
+
+#endif // !_HEADERS_H_

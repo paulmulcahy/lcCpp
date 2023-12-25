@@ -1,27 +1,19 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(leetcode VERSION 0.1.0)
+# CMake version >= 3.10 due to gtest_discover_tests()
+# See https://cmake.org/cmake/help/git-stage/module/GoogleTest.html
+cmake_minimum_required(VERSION 3.10)
+
+project(LeetCode)
+
+set(CMAKE_CXX_STANDARD 20)
 
 enable_testing()
 find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIR})
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
-
-MACRO(SUBDIRLIST result curdir)
-     FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
-     SET(dirlist "")
-     FOREACH(child ${children})
-       IF(IS_DIRECTORY ${curdir}/${child})
-         LIST(APPEND dirlist ${child})
-       ENDIF()
-     ENDFOREACH()
-     SET(${result} ${dirlist})
-ENDMACRO()
-
-SUBDIRLIST(problems ${CMAKE_CURRENT_SOURCE_DIR}/problems)
+include_directories(${GTEST_INCLUDE_DIR})
 
 add_subdirectory(include)
-foreach(problem ${problems})
-add_subdirectory(problems/${problem})
-endforeach()
+
+add_subdirectory(test)
+add_subdirectory(src)

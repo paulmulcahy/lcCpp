@@ -19,8 +19,8 @@ Run `cmake .` then `make` in either top directory or problem directory to build 
 
 It will compile a binary in the problem directory with the same name as the solution cpp file.
 
+Run `ctest .` then `make` in either top directory to test all problems.
 
 # Credits
 
-https://github.com/fengkx/leetcode-cmake
 https://github.com/Pokerpoke/LeetCode

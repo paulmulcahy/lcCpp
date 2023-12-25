@@ -12,3 +12,11 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+*.cmake
+
+src/0.template
+src/1.twoSums
+src/2.addTwoNumbers
+test/test_listnode
+test/test_tree
+build
